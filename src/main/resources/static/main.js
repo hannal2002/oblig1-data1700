@@ -24,23 +24,23 @@ function kjop() {
         document.getElementById('feilAntall').textContent = '';
     }
 
-    //Validering for fornavn. SJEKK DENNE
+    //Validering for fornavn
     if (!fornavn){
         document.getElementById('feilFornavn').textContent = 'Vennligst skriv inn et fornavn';
     } else {
         document.getElementById('feilFornavn').textContent = '';
     }
 
-    //Validering for etternavn. SJEKK DENNE
+    //Validering for etternavn
     if (!etternavn){
         document.getElementById('feilEtternavn').textContent = 'Vennligst skriv inn et etternavn';
     } else {
         document.getElementById('feilEtternavn').textContent = '';
     }
 
-    //Validering for tlfnr. Må ha 8 nummer.
-    //Kilde: https://stackoverflow.com/questions/73656999/regex-to-validate-only-digits-from-0-9-maximum-of-8-digits-till-a-dot-and-only
-    if (!tlfNr || !/^[0-9]{8}$/.test(tlfNr)){
+    //Validering for tlfnr. Må ha 8 nummerm må starte på 9 eller 4, og kan ha +47 ot 0047
+    //https://stackoverflow.com/questions/34001939/regular-expression-for-norwegian-numbers
+    if (!tlfNr || !/^((0047)?|(\+47)?)[4|9]\d{7}$/.test(tlfNr)){
         document.getElementById('feilTelefonnr').textContent = 'Vennligst skriv inn et gyldig telefonnummer';
     } else {
         document.getElementById('feilTelefonnr').textContent = '';
